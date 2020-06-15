@@ -1,10 +1,9 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 
+import Routes from './routes'
 // import { Container } from './styles';
 
-const src = () => {
-  return <Text>It's it!</Text>;
+export default function src () {
+  return <Routes />;
 }
-
-export default src;

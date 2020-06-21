@@ -26,18 +26,22 @@ export default function SelectProvider({ navigation }) {
         <ProvidersList
           data={providers}
           keyExtractor={(provider) => String(provider.id)}
-          renderItem={({ item }) => (
+          renderItem={({ item: provider }) => (
             <Provider
-              onPress={() => navigation.navigate('SelectDateTime', { item })}
+              onPress={() =>
+                navigation.navigate('SelectDateTime', { provider })
+              }
             >
               <Avatar
                 source={{
-                  uri: item.avatar
-                    ? item.avatar.url
-                    : `http://api.adorable.io/avatar/50/${item.name}.png`,
+                  uri: provider.avatar
+                    ? provider.avatar.url
+                    : `http://api.adorable.io/avatar/50/${provider.name}.png`,
                 }}
               />
-              <Name>{item.name}</Name>
+
+              <Name>{provider.name}</Name>
+              <Name>{provider.avatar && provider.avatar.url}</Name>
             </Provider>
           )}
         />

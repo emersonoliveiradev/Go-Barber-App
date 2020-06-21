@@ -41,7 +41,6 @@ export default function SelectProvider({ navigation }) {
               />
 
               <Name>{provider.name}</Name>
-              <Name>{provider.avatar && provider.avatar.url}</Name>
             </Provider>
           )}
         />
